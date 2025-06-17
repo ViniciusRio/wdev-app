@@ -2,7 +2,11 @@
 import { ref } from 'vue'
 defineOptions({ name: 'Header' })
 
-const menuActive = ref(true)
+const menuActive = ref(false)
+function handleMenu() {
+    menuActive.value = !menuActive.value;
+}
+
 </script>
 <template>
     <header>
@@ -11,10 +15,11 @@ const menuActive = ref(true)
                 <img id="logo" alt="" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg">
             </a>
 
-            <img id="menu-button" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/menu.svg" alt="Menu mobile"/>
+            <img v-on:click="handleMenu" id="menu-button" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/menu.svg" alt="Menu mobile"/>
         
-            <div id="menu-overlay" v-if="menuActive"></div>
-
+            <div v-on:click="handleMenu" id="menu-overlay" v-if="menuActive"></div>
+            <!-- vai usar :class pq com v-if não consegue o comportamento
+            no desktop -->
             <div id="menu-items" :class="{ active: menuActive }">
                 <img id="menu-logo" alt="" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg">
 
@@ -31,18 +36,21 @@ const menuActive = ref(true)
 
 <style scoped>
 header {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    background-color: var(--color-background-nav);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 60px;
+
+    background-color: var(--color-background-nav);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
+    width: 100%;
+    height: 60px;
 }
 
 #logo {
@@ -91,5 +99,38 @@ ul li {
 }
 ul li a {
     color: var(--color-text-light);
+}
+
+@media (min-width: 700px) {
+    #menu-button,
+    #menu-logo,
+    #menu-overlay {
+        display: none;
+    }
+
+    #menu-items {
+        display: flex;
+        position: static;
+        height: 60px;
+        width: auto;
+    }
+
+    /* Antes era embaixo do outro, agora precisa de 
+    do lado do outro */
+    ul {
+        display: flex;
+        height: 60px;
+        align-items: center;
+
+    }
+
+    ul li {
+        margin: 0;
+        margin-left: 20px;
+
+    }
+
+
+
 }
 </style>
