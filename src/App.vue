@@ -3,13 +3,12 @@
 import './styles/global.css'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import Home from './pages/Home.vue'
-
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
       <Header />
-      <Home />
+      <RouterView />
       <Footer />
 </template>
 

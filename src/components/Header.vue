@@ -25,9 +25,9 @@ function handleMenu() {
 
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">Vídeos</a></li>
-                    <li><a href="/">Sobre</a></li>
-                    <li><a href="/">Contato</a></li>
+                    <li><a href="/videos">Vídeos</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
+                    <li><a href="/contato">Contato</a></li>
                 </ul>
             </div>
         </nav>
