@@ -11,9 +11,9 @@ function handleMenu() {
 <template>
     <header>
         <nav class="container">
-            <a href="/">
+            <router-link to="/">
                 <img id="logo" alt="" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg">
-            </a>
+            </router-link>
 
             <img v-on:click="handleMenu" id="menu-button" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/menu.svg" alt="Menu mobile"/>
         
@@ -24,10 +24,10 @@ function handleMenu() {
                 <img id="menu-logo" alt="" src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg">
 
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/videos">Vídeos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                    <li><a href="/contato">Contato</a></li>
+                    <li v-on:click="handleMenu"><router-link to="/">Home</router-link></li>
+                    <li v-on:click="handleMenu"><router-link to="/videos">Vídeos</router-link></li>
+                    <li v-on:click="handleMenu"><router-link to="/sobre">Sobre</router-link></li>
+                    <li v-on:click="handleMenu"><router-link to="/contato">Contato</router-link></li>
                 </ul>
             </div>
         </nav>
