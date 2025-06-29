@@ -1,13 +1,19 @@
 
 import Home from '@/pages/Home.vue'
-import { createMemoryHistory, createRouter } from 'vue-router'
+import Videos from '@/pages/Videos.vue'
+
+
+import { createWebHistory, createRouter } from 'vue-router'
 
 const routes = [
-    { path: '/', component: Home }
+    { path: '/', component: Home },
+    { path: '/videos', component: Videos }
+
 ]
 
+
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 })
 

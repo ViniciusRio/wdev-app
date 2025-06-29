@@ -35,5 +35,12 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px);
+
+}
+
+h1 {
+    color: var(--color-text-title);
+    margin-top: 40px 0;
+    font-size: 30px;
 }
